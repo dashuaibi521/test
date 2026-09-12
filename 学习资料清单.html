@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>研一学习资料清单 2026.9 – 2027.8</title>
+<style>
+:root{
+  --bg:#f5f7fa; --card:#ffffff; --ink:#1c2532; --ink2:#4a5768; --ink3:#7b8798;
+  --line:#e2e8f0; --brand:#1a4d8f; --brand2:#2d6fc4; --brand-soft:#eaf2fb;
+  --warn:#c2691a; --warn-soft:#fdf3e6; --good:#1f7a4d; --good-soft:#e8f5ee;
+  --red:#b8352c; --red-soft:#fdeceb; --purple:#6b3fa0; --purple-soft:#f1ebfa;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  background:var(--bg); color:var(--ink); line-height:1.75; font-size:15px;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px 80px}
+
+header{background:linear-gradient(135deg,#12365f 0%,#1a4d8f 55%,#2d6fc4 100%);color:#fff;padding:52px 0 44px;margin-bottom:36px}
+header .wrap{padding-bottom:0}
+.eyebrow{font-size:13px;letter-spacing:2px;opacity:.8;margin-bottom:12px}
+h1{font-size:32px;font-weight:700;letter-spacing:-.5px;line-height:1.35}
+.sub{margin-top:14px;font-size:15px;opacity:.9;max-width:820px}
+.meta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.chip{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);
+  padding:5px 13px;border-radius:20px;font-size:13px}
+
+nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line);margin-bottom:36px}
+nav .wrap{padding:0 24px;display:flex;gap:4px;overflow-x:auto}
+nav a{padding:14px 14px;font-size:14px;color:var(--ink2);text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent}
+nav a:hover{color:var(--brand);border-bottom-color:var(--brand)}
+
+section{margin-bottom:52px}
+h2{font-size:23px;font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:11px}
+h2 .num{background:var(--brand);color:#fff;width:31px;height:31px;border-radius:8px;
+  display:inline-flex;align-items:center;justify-content:center;font-size:15px;flex:none}
+.lead{color:var(--ink3);font-size:14px;margin-bottom:22px;padding-left:42px}
+h3{font-size:17px;font-weight:650;margin:28px 0 12px;color:var(--brand);
+  padding-left:11px;border-left:3px solid var(--brand2)}
+h4{font-size:15px;font-weight:650;margin:18px 0 8px}
+p{margin-bottom:12px;color:var(--ink2)}
+strong{color:var(--ink);font-weight:650}
+ul,ol{margin:0 0 14px 20px;color:var(--ink2)}
+li{margin-bottom:7px}
+a{color:var(--brand2);text-decoration:none;border-bottom:1px dashed var(--brand2)}
+a:hover{color:var(--brand)}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:24px 26px;margin-bottom:18px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:860px){.grid2{grid-template-columns:1fr}}
+
+.box{border-radius:10px;padding:16px 18px;margin:14px 0;font-size:14px;border-left:4px solid}
+.box .t{font-weight:700;margin-bottom:6px;font-size:14px}
+.box.warn{background:var(--warn-soft);border-color:var(--warn)}
+.box.warn .t{color:var(--warn)}
+.box.good{background:var(--good-soft);border-color:var(--good)}
+.box.good .t{color:var(--good)}
+.box.info{background:var(--brand-soft);border-color:var(--brand2)}
+.box.info .t{color:var(--brand)}
+.box.danger{background:#fdeceb;border-color:var(--red)}
+.box.danger .t{color:var(--red)}
+.box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
+
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin:14px 0;background:#fff}
+th{background:#eef3f9;color:var(--brand);font-weight:650;text-align:left;padding:11px 12px;
+  border:1px solid var(--line);white-space:nowrap}
+td{padding:11px 12px;border:1px solid var(--line);color:var(--ink2);vertical-align:top}
+tbody tr:nth-child(even){background:#fafbfd}
+td strong{color:var(--ink)}
+td a{word-break:break-all}
+
+.tag{display:inline-block;padding:2px 9px;border-radius:5px;font-size:12px;font-weight:600;margin-right:5px}
+.tag.hi{background:var(--good-soft);color:var(--good)}
+.tag.mid{background:var(--warn-soft);color:var(--warn)}
+.tag.lo{background:#fdeceb;color:var(--red)}
+.tag.b{background:var(--brand-soft);color:var(--brand)}
+.tag.p{background:var(--purple-soft);color:var(--purple)}
+
+.kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:18px 0}
+@media(max-width:860px){.kpi{grid-template-columns:repeat(2,1fr)}}
+.kpi div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px;text-align:center}
+.kpi .v{font-size:24px;font-weight:700;color:var(--brand);line-height:1.2}
+.kpi .l{font-size:12.5px;color:var(--ink3);margin-top:4px}
+
+.code{background:#f7f9fc;border:1px solid var(--line);border-radius:10px;padding:16px 18px;
+  font-family:ui-monospace,"SF Mono",Consolas,monospace;font-size:13px;line-height:1.9;
+  white-space:pre-wrap;color:var(--ink2);overflow-x:auto}
+
+footer{text-align:center;color:var(--ink3);font-size:12.5px;padding:30px 0;border-top:1px solid var(--line);margin-top:40px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">LEARNING RESOURCES · 2026.9 — 2027.8</div>
+    <h1>研一学习资料清单<br>每一本书、每一门课、每一个仓库，链接都在这里</h1>
+    <p class="sub">与《研一详细执行计划》的逐月表严格配套：什么时候学、用什么学、学到什么程度就收手。<br>
+    所有链接已逐一核实可访问。中文资源优先，英文资源全是免费公开的官方版本。</p>
+    <div class="meta-row">
+      <span class="chip">主线：C++ → Python → ROS2 → MuJoCo → 复现 → 控制</span>
+      <span class="chip">原则：同一时间只开一条线</span>
+      <span class="chip">每个资源必须配产出</span>
+      <span class="chip">收藏 ≠ 学习</span>
+    </div>
+  </div>
+</header>
+
+<nav><div class="wrap">
+  <a href="#s1">① 使用规则</a>
+  <a href="#s2">② 编程与工具 9–12月</a>
+  <a href="#s3">③ 机器人学与控制 2–6月</a>
+  <a href="#s4">④ ROS2与仿真 1–3月</a>
+  <a href="#s5">⑤ RL与复现 4–8月</a>
+  <a href="#s6">⑥ 外骨骼专项</a>
+  <a href="#s7">⑦ 论文跟踪工具</a>
+  <a href="#s8">⑧ 英语与其他</a>
+  <a href="#s9">⑨ 避坑指南</a>
+</div></nav>
+
+<div class="wrap">
+
+<!-- ========== 1 ========== -->
+<section id="s1">
+  <h2><span class="num">1</span>使用规则：先读这页，再看后面</h2>
+  <p class="lead">资料本身不值钱，"用对时间 + 配产出"才值钱。这份清单的每个条目都标了何时用、学到什么程度就收手。</p>
+
+  <div class="card">
+    <h3 style="margin-top:0">三条规则</h3>
+    <div class="box good">
+      <div class="t">规则一：同一时间只开一条线</div>
+      <p>《研一详细执行计划》的技能顺序是<strong>单线程</strong>的：C++（9–10 月）→ Python（11 月）→ 深度学习（12 月）→ ROS2（1–2 月）→ 机器人学+MuJoCo（2–3 月）→ 复现（4–5 月）→ 控制理论（6 月）→ 写作（7 月）。<strong>清单里标了"何时用"——没到那个月份，不要碰那个资源。</strong>囤货式学习是研一最大的死法。</p>
+    </div>
+    <div class="box info">
+      <div class="t">规则二：每个资源必须配产出</div>
+      <p>看课不产生任何东西。<strong>每个资源后面都写了"学完交出什么"</strong>——一个 GitHub 仓库、一张能放进组会 PPT 的图、一份复现报告。交不出来，就等于没学。</p>
+    </div>
+    <div class="box warn">
+      <div class="t">规则三：收藏 ≠ 学习</div>
+      <p>这份清单<strong>故意短</strong>。每个方向只留 1 个主推 + 1–2 个备选。网上那些"机器人学习资源大全 100 个"的帖子，<strong>全部不要看</strong>——它们唯一的作用就是让你焦虑。</p>
+    </div>
+
+    <h3>资源分级说明</h3>
+    <table>
+      <thead><tr><th style="width:16%">标签</th><th>含义</th></tr></thead>
+      <tbody>
+        <tr><td><span class="tag hi">主推</span></td><td>必做。按逐月表的时间节点完成，并交出配套产出</td></tr>
+        <tr><td><span class="tag mid">备选</span></td><td>主推看不下去/听不懂时换一个，<strong>不是两个都要看</strong></td></tr>
+        <tr><td><span class="tag lo">扩展</span></td><td>做完主推还有余力才碰；研一不碰也完全没问题</td></tr>
+      </tbody>
+    </table>
+
+    <h3>总览：月份 ↔ 学什么 ↔ 用哪份资料</h3>
+    <table>
+      <thead><tr><th style="width:12%">月份</th><th style="width:22%">学什么</th><th>主推资料（详情见对应章节）</th></tr></thead>
+      <tbody>
+        <tr><td><strong>2026.9–10</strong></td><td>C++ + 工具链</td><td>《C++ Primer》前 16 章 · LeetCode Hot 100 · MIT 缺失的一课（中文）· Pro Git</td></tr>
+        <tr><td><strong>2026.11</strong></td><td>Python + 数据处理</td><td>廖雪峰 Python · NumPy Quickstart · Matplotlib</td></tr>
+        <tr><td><strong>2026.12</strong></td><td>深度学习</td><td>PyTorch 60 分钟 Blitz · D2L《动手学深度学习》前 4 章</td></tr>
+        <tr><td><strong>2027.1–2</strong></td><td>ROS2</td><td>古月居《ROS2 入门 21 讲》+ 鱼香 ROS《动手学 ROS2》图文 + 官方文档</td></tr>
+        <tr><td><strong>2027.2–3</strong></td><td>机器人学 + MuJoCo</td><td>林沛群（中文）/ Modern Robotics（英文系统）· MuJoCo 官方文档</td></tr>
+        <tr><td><strong>2027.4–5</strong></td><td>复现论文</td><td>legged_gym / unitree_rl_gym · Datawhale every-embodied · 组内师兄论文代码</td></tr>
+        <tr><td><strong>2027.6–8</strong></td><td>控制 + RL + 写作</td><td>MIT 6.832 Underactuated · Spinning Up · CleanRL · 阻抗/MPC 对比实验</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ========== 2 ========== -->
+<section id="s2">
+  <h2><span class="num">2</span>阶段一：编程与工具（2026.9 — 2026.12）</h2>
+  <p class="lead">目标：9–10 月 C++ 能读写工程代码，11 月 Python 能帮组里干活，12 月能训一个小网络。</p>
+
+  <div class="card">
+    <h3 style="margin-top:0">2.1 C++ 与刷题（9–10 月）</h3>
+    <table>
+      <thead><tr><th style="width:26%">资料</th><th style="width:10%">类型</th><th style="width:9%">语言</th><th style="width:38%">怎么用 / 学到什么程度就收手</th><th>何时用</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>《C++ Primer》第 5 版</strong> <span class="tag hi">主推</span></td>
+          <td>书</td><td>中文</td>
+          <td>只看<strong>前 16 章</strong>（到"拷贝控制"为止），后 3 章移动语义/模板高级特性<strong>不读</strong>。每章后习题挑 3–5 题写代码提交 GitHub。程度：能读懂并修改 ROS2 官方示例、能写出带 Eigen 的小工程。80 小时以内搞定</td>
+          <td>9–10 月</td>
+        </tr>
+        <tr>
+          <td><strong><a href="https://leetcode.cn/studyplan/top-100-liked/" target="_blank">LeetCode CN · 力扣 Hot 100 题单</a></strong> <span class="tag hi">主推</span></td>
+          <td>题库</td><td>中文</td>
+          <td>官方"HOT 100"学习计划。9 月数组/字符串/哈希 20 题起步，10 月累计 50 题（含中等 15 题）。<strong>这是秋招算法岗笔试的最低门票</strong>，每周固定在碎片时间刷，不占深度块</td>
+          <td>9 月起持续</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.bilibili.com/video/BV1et411b73Z/" target="_blank">黑马程序员 C++（B 站）</a> <span class="tag mid">备选</span></td>
+          <td>视频</td><td>中文</td>
+          <td>书看不下去时的拐杖。1.5–2 倍速看核心语法部分（指针、引用、类、STL、智能指针），<strong>看完必须回到书写代码</strong>，视频不产生任何东西</td>
+          <td>9 月</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>2.2 工具链：Linux / Git / CMake（9–10 月，穿插）</h3>
+    <table>
+      <thead><tr><th style="width:26%">资料</th><th style="width:10%">类型</th><th style="width:9%">语言</th><th style="width:38%">怎么用 / 学到什么程度就收手</th><th>何时用</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong><a href="https://missing-semester-cn.github.io/" target="_blank">MIT《计算机教育中缺失的一课》中文版</a></strong> <span class="tag hi">主推</span></td>
+          <td>图文</td><td>中文</td>
+          <td>社区官方翻译，原版 MIT 公开课。共 11 讲，重点 5 讲：Shell 入门、Shell 工具与脚本、命令行环境、版本控制(Git)、调试及性能分析。<strong>每讲后的练习必须做</strong>。全程约 10 小时</td>
+          <td>9 月</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/CN-missemi/CN_missemi" target="_blank">CN_missemi 中文字幕视频（GitHub 仓库）</a> <span class="tag mid">备选</span></td>
+          <td>视频</td><td>中文字幕</td>
+          <td>同一个 MIT 课程的中文字幕版视频（字幕组发布于 B 站，仓库内有链接）。不习惯看图文时用它。原站：<a href="https://missing.csail.mit.edu/" target="_blank">missing.csail.mit.edu</a>（2026 版）</td>
+          <td>9 月</td>
+        </tr>
+        <tr>
+          <td><strong><a href="https://git-scm.com/book/zh/v2" target="_blank">Pro Git 中文版</a></strong> <span class="tag hi">主推</span></td>
+          <td>图文</td><td>中文</td>
+          <td>Git 官方书。只读第 1–3 章（基础+分支）和第 6 章 GitHub 协作。程度：会建分支、提 PR、处理冲突、回滚。<strong>别读完，边用边查</strong></td>
+          <td>10 月</td>
+        </tr>
+        <tr>
+          <td><a href="https://fishros.com/install" target="_blank">鱼香 ROS 一键安装工具</a> <span class="tag b">装机必备</span></td>
+          <td>脚本</td><td>中文</td>
+          <td>一键装 ROS/ROS2、VS Code、Docker、GitHub 桌面版，还能一键配置系统源与 rosdep（rosdepc）。<strong>装 Ubuntu（22.04 双系统或 WSL2）和后续 ROS2 环境时直接用</strong>，命令：<code>wget http://fishros.com/install -O fishros &amp;&amp; bash fishros</code>。CMake 不需要单独学——写 ROS2 工程时边写边查</td>
+          <td>9 月起</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>2.3 Python 与数据处理（11 月）</h3>
+    <table>
+      <thead><tr><th style="width:26%">资料</th><th style="width:10%">类型</th><th style="width:9%">语言</th><th style="width:38%">怎么用 / 学到什么程度就收手</th><th>何时用</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong><a href="https://www.liaoxuefeng.com/wiki/1016959663602400" target="_blank">廖雪峰 Python 教程</a></strong> <span class="tag hi">主推</span></td>
+          <td>图文</td><td>中文</td>
+          <td>只读到"模块"为止（前 13 节左右），函数式/高级特性跳过。程度：不查语法能写 100 行脚本。<strong>三天内过完，剩下的用中学</strong></td>
+          <td>11 月上</td>
+        </tr>
+        <tr>
+          <td><strong><a href="https://numpy.org/doc/stable/user/quickstart.html" target="_blank">NumPy 官方 Quickstart</a></strong> + <strong><a href="https://matplotlib.org/stable/tutorials/index.html" target="_blank">Matplotlib 官方 Tutorials</a></strong> <span class="tag hi">主推</span></td>
+          <td>文档</td><td>英文</td>
+          <td>官方文档，各 2–3 小时过一遍。<strong>交付物：拿组里/网上的实验数据做一次完整清洗+统计+绘图，产出一张能直接放进组会 PPT 的图</strong>——这是你在组里建立"这学生有用"印象最快的一招</td>
+          <td>11 月</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>2.4 深度学习（12 月，与期末/六级并行）</h3>
+    <table>
+      <thead><tr><th style="width:26%">资料</th><th style="width:10%">类型</th><th style="width:9%">语言</th><th style="width:38%">怎么用 / 学到什么程度就收手</th><th>何时用</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong><a href="https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html" target="_blank">PyTorch 官方 60 Minutes Blitz</a></strong> <span class="tag hi">主推</span></td>
+          <td>教程</td><td>英文</td>
+          <td>官方四小时速成：张量 → 自动求导 → 搭网络 → 训练 CIFAR。<strong>跟着敲一遍，然后不看教程从零复现一遍</strong>。程度：能自己搭、训、评估一个小网络</td>
+          <td>12 月上</td>
+        </tr>
+        <tr>
+          <td><strong><a href="https://zh.d2l.ai/" target="_blank">D2L《动手学深度学习》中文版</a></strong> <span class="tag hi">主推</span></td>
+          <td>书+代码</td><td>中文</td>
+          <td>李沐团队官方免费在线书。只读前 4 章：线性回归、MLP、CNN、正则化。<strong>每章后面的练习用 PyTorch 版敲</strong>，notebook 推到 GitHub。这正好和你周一晚的《机器学习原理及应用》课互补</td>
+          <td>12 月</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.bilibili.com/video/BV1Wv411h7kN/" target="_blank">李宏毅 2021/2022 机器学习（B 站搬运）</a> <span class="tag mid">备选</span></td>
+          <td>视频</td><td>中文</td>
+          <td>台大公开课，讲得生动。D2L 读不进去时换它。<strong>只看回归、神经网络、CNN 三讲即可</strong>，其余别追</td>
+          <td>12 月</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ========== 3 ========== -->
+<section id="s3">
+  <h2><span class="num">3</span>阶段二：机器人学与控制理论（2027.2 — 2027.6）</h2>
+  <p class="lead">这是你「运控算法」路线的理论地基。和你周三上午的《机器人优化设计与动力学控制》课互为表里——课内拿分，课外拿能力。</p>
+
+  <div class="card">
+    <h3 style="margin-top:0">3.1 机器人学（2–3 月）</h3>
+    <table>
+      <thead><tr><th style="width:26%">资料</th><th style="width:10%">类型</th><th style="width:9%">语言</th><th style="width:38%">怎么用 / 学到什么程度就收手</th><th>何时用</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong><a href="https://www.bilibili.com/video/BV1v4411H7ez/" target="_blank">台大 林沛群《机器人学 · 运动学》</a></strong> <span class="tag hi">主推</span></td>
+          <td>视频</td><td>中文</td>
+          <td>中文圈公认的机器人学入门第一课，54 集含课件。重点看：旋转矩阵、D-H 表示、正逆运动学、雅可比、轨迹规划。<strong>配套动作：推导的同时用 Python 写代码实现，与库函数对拍验证</strong>（这是逐月表 2 月的验收标准）。动力学部分接着看<a href="https://www.bilibili.com/video/BV1Vt41157jp/" target="_blank">《机器人学 · 动力学》</a></td>
+          <td>2–3 月</td>
+        </tr>
+        <tr>
+          <td><strong><a href="https://www.coursera.org/specializations/modernrobotics" target="_blank">Modern Robotics 专项课（西北大学，Coursera）</a></strong> <span class="tag hi">主推（英文系统）</span></td>
+          <td>视频+作业</td><td>英文</td>
+          <td>Lynch &amp; Park 的官方课程，6 门短课覆盖全书。选 <strong>audit（旁听）免费</strong>。重点 Course 2 运动学、Course 3 动力学、<strong>Course 4 运动规划与控制（第 11 章力控，直接关系你的阻抗控制）</strong>。视频也可在<a href="http://modernrobotics.northwestern.edu/" target="_blank">官方视频浏览器</a>或 <a href="https://www.bilibili.com/video/BV1KV411Z7sC/" target="_blank">B 站中英字幕版</a>免费看；书有<strong>官方免费 preprint PDF</strong>（hades.mech.northwestern.edu 可下）</td>
+          <td>3–6 月</td>
+        </tr>
+        <tr>
+          <td>Craig《机器人学导论》（中文版第 4 版） <span class="tag mid">备选</span></td>
+          <td>书</td><td>中文</td>
+          <td>经典教材，<strong>当工具书用</strong>：看视频/写作业卡壳时翻对应章节，不从头到尾读</td>
+          <td>常备</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.bilibili.com/video/BV1ix411f7Yp/" target="_blank">MIT 18.06 线性代数（Gilbert Strang，B 站）</a> <span class="tag mid">备选</span></td>
+          <td>视频</td><td>英文</td>
+          <td>矩阵分析课（陆小军）跟不上的话，用它打底。只看第 1–10 讲（消元、消去、逆、空间、正交、行列式、特征值），这是后面所有状态估计/优化的符号基础</td>
+          <td>按需</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>3.2 控制理论（4–6 月）</h3>
+    <table>
+      <thead><tr><th style="width:26%">资料</th><th style="width:10%">类型</th><th style="width:9%">语言</th><th style="width:38%">怎么用 / 学到什么程度就收手</th><th>何时用</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong><a href="https://underactuated.csail.mit.edu/" target="_blank">MIT 6.832 Underactuated Robotics（Russ Tedrake）</a></strong> <span class="tag hi">主推</span></td>
+          <td>在线教材</td><td>英文</td>
+          <td><strong>运控方向的"圣经"，HTML 版全免费</strong>，讲义+代码全开源（配套 <a href="https://drake.mit.edu/" target="_blank">Drake</a>），课程视频在 YouTube（搜 Underactuated Robotics）。重点章节：第 1–3 章（全驱动/欠驱动、摆、acrobot）、第 5 章（行走模型）、第 8 章 LQR、第 10 章之后轨迹优化。<strong>外骨骼控制（人机耦合=欠驱动系统）的理论根基全在这本书里</strong>，这也是为什么逐月表把它列为 6 月核心</td>
+          <td>4–6 月</td>
+        </tr>
+        <tr>
+          <td>Ogata《Modern Control Engineering》（现代控制工程） <span class="tag mid">备选</span></td>
+          <td>书</td><td>中文/英文</td>
+          <td>状态空间、观测器、稳定性判据的<strong>工具书</strong>。看 6.832 时遇到经典控制概念不清就翻它</td>
+          <td>4–6 月</td>
+        </tr>
+        <tr>
+          <td><a href="https://ocw.mit.edu/courses/6-832-underactuated-robotics-spring-2009/" target="_blank">MIT OCW 6.832（2009 版）</a> <span class="tag lo">扩展</span></td>
+          <td>课程页</td><td>英文</td>
+          <td>有完整作业题、编程题和答案。想刷题练手时来这里取题</td>
+          <td>有余力</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ========== 4 ========== -->
+<section id="s4">
+  <h2><span class="num">4</span>阶段三：ROS2 与仿真（2027.1 — 2027.3）</h2>
+  <p class="lead">目标：1 月寒假在佛山能把 ROS2 跑通，2 月 URDF 建模 + 组会报告，3 月把组里的机构建成 MuJoCo 模型。</p>
+
+  <div class="box info" style="margin:16px 0">
+    <div class="t">起点校准（2026.9 更新）：有 ROS1 实车部署经验，ROS2 阶段压缩到 2–3 周</div>
+    <p>你本科毕设已把 ROS1 Navigation 全栈部署到实体 AGV（move_base / AMCL / 三层代价地图 / EKF 融合都调过），<strong>ROS2 对你是概念迁移，不是新学</strong>。执行调整：古月居 21 讲加速过一遍，重点只看与 ROS1 不同的章节（DDS/QoS、生命周期节点、python launch、Nav2）；鱼香 ROS 退为「只查不看」；随后直接进入 <a href="https://docs.nav2.org/" target="_blank">Nav2 官方文档</a>（ROS1 Navigation Stack 的官方继任者，概念一一对应）。<strong>压缩释放出的 3–5 周全部转投 C++ 工程深度与论文复现（阶段五）</strong>；本阶段目标由「跑通」上调为「读懂组里模型并改进」。</p>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-top:0">4.1 ROS2（1–2 月）</h3>
+    <table>
+      <thead><tr><th style="width:26%">资料</th><th style="width:10%">类型</th><th style="width:9%">语言</th><th style="width:38%">怎么用 / 学到什么程度就收手</th><th>何时用</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong><a href="https://www.bilibili.com/video/BV16B4y1Q7jQ/" target="_blank">古月居《ROS2 入门 21 讲》（B 站）</a></strong> <span class="tag hi">主推</span></td>
+          <td>视频+源码</td><td>中文</td>
+          <td>中文圈最主流的 ROS2 入门课。<strong>每一讲都对着敲</strong>，配套源码在 <a href="https://gitee.com/guyuehome/ros2_21_tutorials/" target="_blank">gitee.com/guyuehome/ros2_21_tutorials</a>（国内直连）。1 月寒假跑完 21 讲：话题/服务/参数/Launch/URDF 全覆盖</td>
+          <td>1 月</td>
+        </tr>
+        <tr>
+          <td><strong><a href="https://fishros.com/d2lros2/" target="_blank">鱼香 ROS《动手学 ROS2》图文教程</a></strong> <span class="tag hi">主推（图文互补）</span></td>
+          <td>图文</td><td>中文</td>
+          <td>查字典式使用：古月居视频看不懂的章节来这里对照。<strong>进阶部分（自定义消息、TF2、launch）比视频更细</strong>。同作者的 <a href="https://fishros.com/install" target="_blank">一键安装脚本</a>解决环境配置 90% 的坑</td>
+          <td>1–2 月</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.bilibili.com/video/BV1VB4y137ys/" target="_blank">赵虚左《ROS2 理论与实践》（B 站）</a> <span class="tag mid">备选</span></td>
+          <td>视频</td><td>中文</td>
+          <td>理论讲得比古月居深（DDS、QoS、节点生命周期）。<strong>不是两个都看</strong>——古月居上手够了，想理解底层再挑章节看</td>
+          <td>按需</td>
+        </tr>
+        <tr>
+          <td><a href="https://docs.ros.org/en/jazzy/" target="_blank">ROS2 官方文档（Jazzy）</a> <span class="tag b">常备</span></td>
+          <td>文档</td><td>英文</td>
+          <td>Tutorials 和 API 的<strong>最终权威</strong>。遇到中文教程和官方说法不一致，以官方为准</td>
+          <td>常备</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>4.2 仿真：MuJoCo 与进阶平台（3 月）</h3>
+    <table>
+      <thead><tr><th style="width:26%">资料</th><th style="width:10%">类型</th><th style="width:9%">语言</th><th style="width:38%">怎么用 / 学到什么程度就收手</th><th>何时用</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong><a href="https://mujoco.readthedocs.io/" target="_blank">MuJoCo 官方文档</a></strong> <span class="tag hi">主推</span></td>
+          <td>文档</td><td>英文</td>
+          <td>看 Overview → Modeling（MJCF 怎么写）→ Programming（Python API）。<strong>交付物：把组里样机的 MJCF 模型建出来、能稳定仿真不炸不穿模、能解释每个关节参数的物理含义</strong>——这是后面所有算法的基础设施</td>
+          <td>3 月</td>
+        </tr>
+        <tr>
+          <td><a href="https://isaac-sim.github.io/IsaacLab/" target="_blank">Isaac Lab 官方文档</a> <span class="tag lo">扩展（研二主线）</span></td>
+          <td>文档</td><td>英文</td>
+          <td>NVIDIA 新一代仿真+RL 平台，<strong>具身智能/Sim2Real 岗的硬通货</strong>，也是 legged_gym 官方钦定的迁移目标。研一<strong>只需要知道它存在</strong>，研二去佛山有 GPU 环境再系统学</td>
+          <td>研二</td>
+        </tr>
+        <tr>
+          <td><a href="https://drake.mit.edu/" target="_blank">Drake</a> <span class="tag lo">扩展</span></td>
+          <td>代码+文档</td><td>英文</td>
+          <td>MIT 的动力学仿真+优化库，6.832 课程配套。学轨迹优化/MPC 时用它，平时不用碰</td>
+          <td>6 月后</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ========== 5 ========== -->
+<section id="s5">
+  <h2><span class="num">5</span>阶段四：强化学习与论文复现（2027.4 — 2027.8）</h2>
+  <p class="lead">这是出成果的阶段：复现 → 改进 → 对比实验 → 投稿/专利。资源只留能直接跑出结果的。</p>
+
+  <div class="card">
+    <h3 style="margin-top:0">5.1 强化学习入门（4 月，理论）</h3>
+    <table>
+      <thead><tr><th style="width:26%">资料</th><th style="width:10%">类型</th><th style="width:9%">语言</th><th style="width:38%">怎么用 / 学到什么程度就收手</th><th>何时用</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong><a href="https://spinningup.openai.com/" target="_blank">OpenAI Spinning Up in Deep RL</a></strong> <span class="tag hi">主推</span></td>
+          <td>图文+代码</td><td>英文</td>
+          <td>RL 入门的黄金标准（至今仍然在线）。读 Introduction to RL 全部三部分 + PPO 章节；后面的算法目录（TRPO/DDPG/SAC）当字典查。<strong>程度：能讲清 PPO 的裁剪目标函数、优势函数、为什么用 Actor-Critic</strong>。附带的 Problem Set 选做 2–3 题</td>
+          <td>4 月</td>
+        </tr>
+        <tr>
+          <td><strong><a href="https://docs.cleanrl.dev/rl-algorithms/ppo" target="_blank">CleanRL · PPO 单文件实现</a></strong> <span class="tag hi">主推（读代码）</span></td>
+          <td>代码+文档</td><td>英文</td>
+          <td><a href="https://github.com/vwxyzjn/cleanrl" target="_blank">github.com/vwxyzjn/cleanrl</a>。RL 圈公认"最适合逐行读的实现"。重点读 <code>ppo_continuous_action.py</code>（约 300 行，含 MuJoCo 连续控制全部细节）。<strong>交付物：跑通 Hopper-v4 / Walker2d-v4，然后用 TensorBoard 曲线讲清楚它为什么收敛</strong></td>
+          <td>4–5 月</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>5.2 复现用开源仓库（4–6 月，动手）</h3>
+    <table>
+      <thead><tr><th style="width:26%">资料</th><th style="width:10%">类型</th><th style="width:9%">语言</th><th style="width:38%">怎么用 / 学到什么程度就收手</th><th>何时用</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong><a href="https://github.com/unitreerobotics/unitree_rl_gym" target="_blank">unitree_rl_gym（宇树官方）</a></strong> <span class="tag hi">主推（国内）</span></td>
+          <td>代码</td><td>英文</td>
+          <td>宇树官方 RL 训练例程，README 含中文、宇树官方文档站还有中文教程（H1 RL 例程）。基于 legged_gym 框架，G1/H1 人形、Go2 四足都有任务。<strong>国内网络环境最顺的复现入口，跑通 train → play 全流程</strong></td>
+          <td>4–5 月</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/leggedrobotics/legged_gym" target="_blank">legged_gym（ETH 苏黎世）</a> <span class="tag mid">备选</span></td>
+          <td>代码</td><td>英文</td>
+          <td>腿式机器人 RL 的祖师爷仓库（Sim2Real 经典）。<strong>注意：官方已停止维护并建议迁移 Isaac Lab</strong>。装 Isaac Gym Preview 4 + rsl_rl v1.0.2，跑通 a1_flat 任务即可，重点是读懂环境/奖励/域随机化怎么写的</td>
+          <td>4–5 月</td>
+        </tr>
+        <tr>
+          <td><strong><a href="https://github.com/datawhalechina/every-embodied" target="_blank">Datawhale《具身智能》开源教程（every-embodied）</a></strong> <span class="tag hi">主推（中文）</span></td>
+          <td>教程</td><td>中文</td>
+          <td>Datawhale 的中文具身智能教程，其中<strong>「HIMLoco：四足机器人运控，从论文理解到 Isaac Lab 新栈复现」一章</strong>，手把手把 ICLR 2024 论文从阅读 → 读码 → 迁移 → smoke test 走了一遍——<strong>这就是你 4–5 月"复现论文"任务的标准姿势</strong>，照这个流程做你自己的复现报告</td>
+          <td>4–5 月</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="box info">
+      <div class="t">复现论文怎么选（来自《研一详细执行计划》，这里再强调一遍）</div>
+      <p>优先级：<strong>① 组里师兄已发表论文的代码</strong>（最容易获得指导，龙亿组 2026 年那篇 EITEE 膝关节外骨骼论文如果师兄有代码就用它）&gt; ② ICRA/IROS 2024–2025 有官方开源的外骨骼/运控论文（在 <a href="https://paperswithcode.com/" target="_blank">Papers with Code</a> 里筛选）&gt; ③ 上面的三个仓库当仿真练手。<br>
+      <strong>唯一标准：必须有开源代码。</strong>第一次复现选没代码的论文，你会在环境配置上耗掉两个月。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 6 ========== -->
+<section id="s6">
+  <h2><span class="num">6</span>外骨骼专项：贴着你的课题积累</h2>
+  <p class="lead">你的课题是「单兵外骨骼人机共生智能协同」。这部分资料让你三年都和课题锁死，而不是学一套用不上的东西。</p>
+
+  <div class="card">
+    <h3 style="margin-top:0">6.1 从龙亿组自己的论文开始</h3>
+    <table>
+      <thead><tr><th style="width:26%">资料</th><th style="width:10%">类型</th><th style="width:38%">怎么用</th><th>何时用</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>龙亿组 2026 年 EITEE 论文</strong><br><em>Development and iterative learning-enhanced sliding mode control of a bioinspired knee exoskeleton</em></td>
+          <td>论文</td>
+          <td>组内最新代表作（SCI-E，IF 3.2）：仿生膝关节 + 准直驱 + <strong>迭代学习增强滑模控制（ILC+SMC）</strong>。<strong>精读三遍</strong>：第一遍看结构（仿生关节怎么解决人机错位），第二遍看控制（ILC 和 SMC 怎么分工），第三遍看实验（轨迹跟踪误差怎么测怎么报）。<strong>进组后向师兄要代码/数据，它就是你 4–5 月复现任务的第一候选</strong></td>
+          <td>9 月起</td>
+        </tr>
+        <tr>
+          <td>组内师兄的学位论文与专利</td>
+          <td>论文/专利</td>
+          <td>知网/专利局可查。看师兄们毕业论文的<strong>目录和结论</strong>，快速摸清组里各条线的深度</td>
+          <td>9–10 月</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>6.2 外骨骼方向必须跟住的检索关键词</h3>
+    <div class="box good">
+      <div class="t">用这组关键词订阅 Google Scholar Alerts 与 arXiv，每周固定 3 小时泛读</div>
+      <p><code>exoskeleton control</code> · <code>impedance control / admittance control</code> · <code>iterative learning control exoskeleton</code> · <code>human intent recognition / gait phase estimation</code> · <code>human-robot co-adaptation</code> · <code>sEMG exoskeleton</code> · <code>assistive torque optimization</code><br>
+      对应中文：<strong>外骨骼控制 / 阻抗控制 / 迭代学习控制 / 运动意图识别 / 步态相位估计 / 人机协同 / 表面肌电</strong>。<br>
+      <strong>特别注意：步态相位识别、运动意图识别 = 模式识别问题——正好对应你周四晚那门《模式识别原理及应用》，课程项目就朝这个方向做。</strong></p>
+    </div>
+
+    <h3>6.3 领域内的顶级出处（论文优先从这些里面找）</h3>
+    <table>
+      <thead><tr><th style="width:24%">出处</th><th style="width:14%">类型</th><th>为什么是它</th></tr></thead>
+      <tbody>
+        <tr><td><strong>ICRA / IROS</strong></td><td>顶会</td><td>机器人两大顶会，外骨骼与运控的最新工作集中地</td></tr>
+        <tr><td><strong>IEEE RAL（Robotics and Automation Letters）</strong></td><td>顶刊</td><td>周期短、含金量高，<strong>你的第一篇论文最合适的投稿目标</strong></td></tr>
+        <tr><td><strong>ICORR</strong>（康复机器人）</td><td>会议</td><td>外骨骼/康复机器人专门会议，方向最贴</td></tr>
+        <tr><td><strong>IEEE TMECH</strong>（机电一体化汇刊）</td><td>顶刊</td><td>龙亿组论文常发地，控制+机械交叉的硬刊</td></tr>
+        <tr><td><strong>《机器人》《自动化学报》</strong></td><td>中文核心</td><td>国内机器人领域中文权威，快速了解国内同行在做什么</td></tr>
+      </tbody>
+    </table>
+
+    <div class="box warn">
+      <div class="t">保密红线（再说一遍）</div>
+      <p>组内课题涉军。<strong>任何来自组内的数据、模型、论文初稿，不得上传任何云端 AI 工具、不得开源、不得发到公开社区。</strong>你公开的只有：自己复现的<strong>已公开</strong>论文、自己做的开源仿真项目、模式识别课的课程项目。这条线一旦越过，三年白干。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 7 ========== -->
+<section id="s7">
+  <h2><span class="num">7</span>论文跟踪与阅读工具（研一精读 20 篇 / 泛读 60 篇）</h2>
+  <p class="lead">每周固定 3 小时（周日下午），用下面的工具把"跟踪领域"变成自动化的事。</p>
+
+  <div class="card">
+    <table>
+      <thead><tr><th style="width:24%">工具</th><th style="width:12%">类型</th><th style="width:40%">干什么用 / 怎么设</th><th>频率</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong><a href="https://scholar.google.com/" target="_blank">Google Scholar</a></strong> <span class="tag hi">主推</span></td>
+          <td>检索</td>
+          <td>① 用第 6 节的关键词建 <strong>Alerts（创建快讯）</strong>，每周邮件推送新论文；② 关注 3–5 个外骨骼领域活跃学者（从组内论文的参考文献和引用者里找）</td>
+          <td>每周</td>
+        </tr>
+        <tr>
+          <td><strong><a href="https://arxiv.org/list/cs.RO/recent" target="_blank">arXiv cs.RO 每日新稿</a></strong></td>
+          <td>预印本</td>
+          <td>机器人方向最新成果第一时间在这里。每天扫一眼标题，感兴趣存进 Zotero，<strong>别每篇都读</strong></td>
+          <td>每天 10 分钟</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.connectedpapers.com/" target="_blank">Connected Papers</a> <span class="tag b">神器</span></td>
+          <td>图谱</td>
+          <td>输入一篇种子论文（如龙亿组那篇），生成相关论文图谱。<strong>调研一个新方向时，10 分钟建立领域全貌</strong></td>
+          <td>按需</td>
+        </tr>
+        <tr>
+          <td><a href="https://paperswithcode.com/" target="_blank">Papers with Code</a></td>
+          <td>代码索引</td>
+          <td><strong>找"有开源代码的论文"</strong>专用——复现选题的唯一入口</td>
+          <td>4–5 月</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.semanticscholar.org/" target="_blank">Semantic Scholar</a></td>
+          <td>检索</td>
+          <td>Google Scholar 的备选，摘要提取和引用关系更好用</td>
+          <td>备选</td>
+        </tr>
+        <tr>
+          <td><strong><a href="https://www.zotero.org/" target="_blank">Zotero</a></strong> <span class="tag hi">主推</span></td>
+          <td>文献管理</td>
+          <td>免费文献管理器：浏览器插件一键存论文、自动抓元数据、写论文时插引用。<strong>研一第一天就装好，每篇读过的论文都进库（否则等于没读）</strong></td>
+          <td>常备</td>
+        </tr>
+        <tr>
+          <td>知网 / 万方</td>
+          <td>检索</td>
+          <td>查师兄学位论文、国内同行工作（学校有账号）</td>
+          <td>按需</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="box info">
+      <div class="t">每篇论文的三问笔记模板（放进知识库）</div>
+      <p>① <strong>它解决什么问题？</strong>（一句话，不许抄摘要）<br>
+      ② <strong>它怎么做的？</strong>（方法一句话 + 关键创新点一句话）<br>
+      ③ <strong>我能用上哪一点？</strong>（具体到"能不能放进我的仿真/我的课题/我的论文"）<br>
+      答不出第三问的论文，立刻弃读——它不在这个月的任务线上。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 8 ========== -->
+<section id="s8">
+  <h2><span class="num">8</span>英语、六级与日常工具</h2>
+  <p class="lead">六级 2026 年 12 月直接考；英语不单独花整块时间，全部和主线合并。</p>
+
+  <div class="card">
+    <table>
+      <thead><tr><th style="width:24%">事项</th><th style="width:12%">类型</th><th style="width:40%">怎么做</th><th>何时</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>六级（2026.12 考）</strong></td>
+          <td>考试</td>
+          <td>周三上午的硕士英语（张月，7 周起）正好接上。10 月起每周 3 套真题精做（听力+阅读拆开来练），12 月直接上。<strong>B 站搜"六级真题精讲"，找播放量最高的系列跟即可</strong>，不要买课</td>
+          <td>10–12 月</td>
+        </tr>
+        <tr>
+          <td>英文阅读能力</td>
+          <td>日常</td>
+          <td><strong>不单独学。</strong>Spinning Up、Underactuated、官方文档全英文——硬着头皮读，三个月后自然顺。遇到长句用词典/翻译工具，但<strong>论文精读必须啃原文</strong></td>
+          <td>持续</td>
+        </tr>
+        <tr>
+          <td><strong>VS Code + 远程开发</strong></td>
+          <td>工具</td>
+          <td>主力编辑器。装 Remote-SSH/WSL 插件、Python/C++ 插件、GitLens。Missing Semester 的"开发环境与工具"一讲照着配</td>
+          <td>9 月</td>
+        </tr>
+        <tr>
+          <td>AI 编程助手</td>
+          <td>工具</td>
+          <td>可用，但两条规矩：① <strong>涉密内容（组内数据/模型/论文）绝不投喂</strong>；② 它写的每一行你都要看得懂——看不懂就让它解释到懂为止，别复制粘贴</td>
+          <td>持续</td>
+        </tr>
+        <tr>
+          <td>知识库（飞书 / Notion / 石墨）</td>
+          <td>工具</td>
+          <td>四个库：论文库、代码库、组会记录、术语与参数表。<strong>链接放进每周周报</strong>——这是导师眼里"你一直在干活"的证据</td>
+          <td>9 月起</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ========== 9 ========== -->
+<section id="s9">
+  <h2><span class="num">9</span>避坑指南：六种死法，一个都别踩</h2>
+  <p class="lead">以下每一条，都是用无数人的一年时间换来的。</p>
+
+  <div class="card">
+    <div class="box danger">
+      <div class="t">① 收藏癖：囤一堆"机器人学习资源大全"</div>
+      <p>这份清单<strong>已经够你用到研二</strong>。再看到"100 个必看资源"的帖子，直接关掉。<strong>焦虑的来源从来不是资源太少，而是没有产出。</strong></p>
+    </div>
+    <div class="box danger">
+      <div class="t">② 同时开多条线：C++ 还没写完就开始看 RL</div>
+      <p>逐月表是单线程的。<strong>本月的资源下个月看，不会过期；这个月碰下个月的资源，两头都做不完。</strong>唯一例外：LeetCode 刷题和论文泛读是贯穿全年的碎片任务。</p>
+    </div>
+    <div class="box danger">
+      <div class="t">③ 把 B 站当剧追：三倍速看完，一行代码不敲</div>
+      <p>所有视频课的规则都是：<strong>看一集 → 敲一遍 → 合上视频复现一遍</strong>。敲不出来的章节回去重看。视频时长 ≠ 学习时长，<strong>产出物才是</strong>。</p>
+    </div>
+    <div class="box danger">
+      <div class="t">④ 复现选没有开源代码的论文</div>
+      <p>再说一遍：<strong>必须有开源代码</strong>（Papers with Code 里筛）。第一次复现就硬啃纯论文，你会在环境配置和调参上耗掉两个月，最后产出为零、信心归零。</p>
+    </div>
+    <div class="box danger">
+      <div class="t">⑤ 在宿舍学</div>
+      <p>深度块（周二/周五/周日）去图书馆或教研室。<strong>宿舍的床会在 20 分钟内打败你。</strong>这条不新，但值得再写一遍。</p>
+    </div>
+    <div class="box danger">
+      <div class="t">⑥ 把涉密内容传给云端 AI 或开源社区</div>
+      <p>组内数据、模型、论文初稿 = 绝不上传、绝不开源。你公开的东西只有三类：<strong>复现已公开论文的代码、自己做的开源仿真、课程项目</strong>。这条线越过一次，三年白干。</p>
+    </div>
+
+    <div class="box good">
+      <div class="t">最后：这份清单怎么用（一句话版）</div>
+      <p><strong>跟着逐月表走到哪个月，就打开哪一节的表，把标了"主推"的那一项做完、交出产出物——其他的全部当作不存在。</strong></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  与《研一详细执行计划》《职业规划与研究生学习计划》配套使用 · 链接最后核实于 2026.09 · 这份清单是活的：发现失效链接或更好的资源，随时替换，但<strong>总量不增</strong>
+</footer>
+
+</div>
+</body>
+</html>
